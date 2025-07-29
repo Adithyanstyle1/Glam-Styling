@@ -54,11 +54,9 @@ export const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <Link to="/book">
-  <Button className="btn-luxury ml-4">
-    Book Now
-  </Button>
-</Link>
+            <Button className="btn-luxury ml-4">
+              Book Now
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
