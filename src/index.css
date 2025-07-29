@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Glam Styling Design System - Luxurious makeup artist brand
+All colors MUST be HSL for proper theming.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - elegant neutrals */
+    --background: 20 20% 98%;
+    --foreground: 15 25% 15%;
+
+    /* Card colors */
+    --card: 20 30% 99%;
+    --card-foreground: 15 25% 15%;
+
+    /* Popover colors */
+    --popover: 20 30% 99%;
+    --popover-foreground: 15 25% 15%;
+
+    /* Primary - Rose Gold */
+    --primary: 15 45% 60%;
+    --primary-foreground: 20 20% 98%;
+    --primary-glow: 20 60% 75%;
+
+    /* Secondary - Blush Pink */
+    --secondary: 340 30% 90%;
+    --secondary-foreground: 15 25% 15%;
+
+    /* Muted - Warm Neutral */
+    --muted: 20 15% 92%;
+    --muted-foreground: 15 15% 45%;
+
+    /* Accent - Deep Charcoal */
+    --accent: 15 20% 25%;
+    --accent-foreground: 20 20% 98%;
+
+    /* Destructive */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 20 20% 98%;
+
+    /* Borders and inputs */
+    --border: 20 20% 88%;
+    --input: 20 20% 88%;
+    --ring: 15 45% 60%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(15 45% 60% / 0.05), hsl(340 30% 90% / 0.1));
+    --shadow-luxury: 0 10px 40px -10px hsl(var(--primary) / 0.3);
+    --shadow-soft: 0 4px 20px -5px hsl(15 25% 15% / 0.1);
+    --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Luxury typography classes */
+  .text-luxury {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.025em;
+  }
+  
+  .text-elegant {
+    letter-spacing: 0.025em;
+  }
+  
+  /* Button variants using standard Tailwind classes */
+  .btn-luxury {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
+    @apply px-8 py-4 rounded-full transition-all duration-300;
+    @apply shadow-lg hover:shadow-xl hover:scale-105;
+    @apply font-medium tracking-wide;
+  }
+  
+  .btn-outline-luxury {
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply px-8 py-4 rounded-full transition-all duration-300;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply font-medium tracking-wide;
+  }
+  
+  /* Animation classes */
+  .fade-in-up {
+    @apply animate-fade-in-up opacity-0;
+  }
+  
+  .stagger-children > * {
+    @apply animate-fade-in-up;
+  }
+  
+  .stagger-children > *:nth-child(1) { 
+    animation-delay: 0.1s; 
+    opacity: 0; 
+  }
+  .stagger-children > *:nth-child(2) { 
+    animation-delay: 0.2s; 
+    opacity: 0; 
+  }
+  .stagger-children > *:nth-child(3) { 
+    animation-delay: 0.3s; 
+    opacity: 0; 
+  }
+  .stagger-children > *:nth-child(4) { 
+    animation-delay: 0.4s; 
+    opacity: 0; 
+  }
+  .stagger-children > *:nth-child(5) { 
+    animation-delay: 0.5s; 
+    opacity: 0; 
+  }
+}
