@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
 
+
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -53,9 +54,11 @@ export const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="btn-luxury ml-4">
-              Book Now
-            </Button>
+            <Link to="/book">
+  <Button className="btn-luxury ml-4">
+    Book Now
+  </Button>
+</Link>
           </div>
 
           {/* Mobile Menu Button */}
